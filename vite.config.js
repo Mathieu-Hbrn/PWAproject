@@ -37,7 +37,7 @@ export default defineConfig({
                 // Cache réseau pour ton API
                 runtimeCaching: [
                     {
-                        urlPattern: ({ url }) => url.pathname.startsWith("/sondes"),
+                        urlPattern: /^https:\/\/iot\.olasserre\.dev-campus\.fr\/api\/.*/i,
                         handler: "NetworkFirst",
                         options: {
                             cacheName: "api-sondes",

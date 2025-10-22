@@ -1,16 +1,57 @@
-# React + Vite
+# 🚰 Supervision des sondes et capteurs de toilettes (PWA)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Application web de supervision en **React + Vite** permettant d’afficher les dernières mesures reçues de sondes et de capteurs de toilettes.  
+Le projet est configuré comme une **Progressive Web App (PWA)** avec support **hors ligne** et **installation** sur mobile ou desktop.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🧩 Fonctionnalités
 
-## React Compiler
+### 🔹 Sondes
+- Récupère les données depuis l’API `/sondes`
+- Filtre pour ne garder que **la dernière mesure** par appareil
+- Affiche :
+    - Pont (`device_id`)
+    - Hauteur d’eau (`haut`)
+    - Tension (`volt`)
+    - Date de réception (`received_at`)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🔹 Toilettes
+- Récupère les données depuis l’API `/toilettes`
+- Affiche :
+    - Nom du capteur
+    - État d’occupation (occupé / libre)
+    - Niveau de batterie
+    - Date de réception
 
-## Expanding the ESLint configuration
+### 🔹 PWA
+- Installation possible sur mobile et bureau
+- Fonctionne **hors connexion**
+- Mise à jour automatique via **Workbox**
+- Icônes et manifest configurés pour le mode standalone
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 🔹 Notification
+- Envoi de notification 
+- soumis a validation de l'utilisateur
+
+
+---
+
+## ⚙️ Technologies utilisées
+
+| Technologie | Rôle |
+|--------------|------|
+| [React](https://reactjs.org/) | Interface utilisateur dynamique |
+| [Vite](https://vitejs.dev/) | Outil de build rapide |
+| [Vite PWA Plugin](https://vite-pwa-org.netlify.app/) | Gestion de la PWA et du service worker |
+| [Workbox](https://developer.chrome.com/docs/workbox) | Caching et stratégies offline |
+| CSS | Mise en forme claire et moderne |
+
+---
+
+## 🛠️ Installation et exécution
+
+### 1️⃣ Cloner le projet
+```bash
+git clone https://github.com/<ton-utilisateur>/<ton-projet>.git
+cd <ton-projet>

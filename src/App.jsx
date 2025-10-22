@@ -8,6 +8,16 @@ import Toilettes from "./components/Toilettes.jsx";
 function App() {
   const [count, setCount] = useState(0)
 
+    useEffect(() => {
+        const button = document.getElementById("notifications");
+        button.addEventListener("click", () => {
+            Notification.requestPermission().then((result) => {
+                if (result === "granted") {
+                    const notification = new Notification("Notification de test", {})
+                }
+            });
+        });
+    })
   return (
     <>
       <div>
@@ -16,6 +26,7 @@ function App() {
         <div>
             <Toilettes />
         </div>
+        <button id="notifications">Envoyer une notification</button>
     </>
   )
 }

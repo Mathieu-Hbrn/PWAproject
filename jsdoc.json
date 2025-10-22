@@ -1,12 +1,14 @@
 {
+  "plugins": [],
+  "recurseDepth": 10,
   "source": {
-    "include": ["src"],
-    "includePattern": ".+\\.jsx?$"
+    "includePattern": ".+\\.js(doc|x)?$",
+    "excludePattern": "(^|\\/|\\\\)_"
   },
-  "plugins": ["plugins/markdown"],
-  "opts": {
-    "recurse": true,
-    "destination": "docs"
+  "sourceType": "module",
+  "tags": {
+    "allowUnknownTags": true,
+    "dictionaries": ["jsdoc","closure"]
   },
   "templates": {
     "cleverLinks": false,

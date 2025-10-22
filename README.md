@@ -55,3 +55,43 @@ Le projet est configuré comme une **Progressive Web App (PWA)** avec support **
 ```bash
 git clone https://github.com/<ton-utilisateur>/<ton-projet>.git
 cd <ton-projet>
+```
+
+### 2️⃣ Installer les dépendances
+```
+pnpm install
+# ou
+npm install
+# ou
+yarn
+```
+
+### 3️⃣ Lancer en mode développement
+```
+pnpm run dev
+```
+
+### 4️⃣ Générer la version de production
+```
+pnpm run build
+```
+
+### 🔧 Configuration de l’API
+
+Crée un fichier .env à la racine
+
+### 📦 Structure du projet📦 Structure du projet
+```
+📁 src/
+ ├── components/
+ │   ├── Sondes.jsx
+ │   └── Toilettes.jsx
+ ├── assets/
+ │   └── icônes, images...
+ ├── styles/
+ │   └── Sondes.css
+ ├── main.jsx
+ └── vite.config.js
+
+```
+
